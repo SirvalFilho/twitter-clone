@@ -1,4 +1,5 @@
 /* RESET CSS MODERNO */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@ html,
 body {
   height: 100%;
   background-color: #e8ecf0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -22,7 +24,7 @@ video,
 canvas,
 svg {
   display: block;
-  max-width: 100%;
+  max-width: 100vh;
 }
 
 input,

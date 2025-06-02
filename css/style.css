@@ -1,0 +1,9 @@
+:root{
+    --gray-1:#E8ECF0;
+    --blue-1:#55ADEE;
+}
+
+.app{
+    width: 100vw;
+    height: 100vh
+}
