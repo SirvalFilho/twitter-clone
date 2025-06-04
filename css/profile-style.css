@@ -1,17 +1,15 @@
-.profile-bg {
-  margin-top: 50px;
+.profile-container {
+  max-width: 100vw;
+  height: 100vh;
   background-color: #e8ecf0;
-  min-height: 100vh;
-  width: 100%;
-  padding: 0;
 }
 
-.profile-container {
-  max-width: 800px;
-  margin: auto;
+
+.profile-content{
+  width: 100%;
   background: #fff;
-  border-radius: 16px;
 }
+
 
 .profile-header {
   display: flex;
@@ -20,105 +18,110 @@
   padding: 12px;
 }
 
-.back-btn {
-  padding: 3px;
+
+.profile-header > button{
+  padding: 10px;
   cursor: pointer;
 }
-.back-btn:hover {
-  border-radius: 100%;
-  background: #6b728033;
+
+
+.profile-header > button > img {
+   max-height: 15px;
 }
 
-.profile-title {
-  margin-left: 20px;
-  font-size: 20px;
-  font-weight: 800;
-}
 
 .profile-banner-content {
   position: relative;
 }
 
+
 .profile-banner {
-  height: 200px;
-  border: 10px solid #fff;
+  height: 140px;
   background-color: #00acee;
+  border-radius: 8px 8px 0 0;
 }
 
-.profile-edit {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  padding: 10px;
-  transform: translateY(120%);
-}
+
 .profile-edit-btn {
+ position: absolute;
+ bottom: 20px;
+ right: 4px;
+ max-height:40px;
+}
+
+
+.profile-edit-btn > button {
   background: #fff;
   color: #1f2937;
   font-weight: 700;
-  padding: 6px 16px;
+  padding: clamp(4px, 0.5vw, 12px) clamp(8px, 2vw, 18px);
   border-radius: 50px;
-  border: 1px solid #d1d5db;
-  font-size: 16px;
+  border: 2px solid #d1d5db;
+  font-size: clamp(12px, 1vw, 16px);
   cursor: pointer;
 }
 
-.profile-edit-btn:hover {
-  background: #6b728033;
-}
-
-.profile-avatar-content {
+.profile-avatar {
   position: absolute;
   bottom: 0;
   left: 24px;
   transform: translateY(50%);
-}
-
-.profile-avatar-bg {
   background-color: #ffff;
   border-radius: 100%;
   padding: 7px;
 }
 
-.profile-avatar {
-  width: 96px;
-  height: 96px;
+
+.profile-avatar-img{
+ width: clamp(92px, 8vw, 120px);
+  height: clamp(92px, 8vw, 120px);
   border-radius: 100%;
 }
 
+
+.profile-avatar-img > img{
+  height: 100%;
+  border-radius: 100%;
+}
+
+
 .profile-info {
+  position: relative;
   padding: 64px 24px 24px;
   text-align: left;
 }
 
-.profile-name {
-  font-size: 30px;
-  font-weight: 800;
+
+.profile-info > h1 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  padding-top: clamp(4px, 0.5vw, 6px);
 }
 
-.profile-username {
+.profile-info p {
   color: #6b7280;
   margin-top: 4px;
   margin-bottom: 0;
+  font-size: clamp(0.75rem, 2vw, 1rem);
 }
 
-.profile-bio {
-  color: #4b5563;
-  margin-top: 8px;
-  margin-bottom: 0;
-}
 .profile-follow {
   display: flex;
   margin-top: 12px;
-  gap: 16px;
+  gap: 8px;
+
 }
 .profile-follow-item {
   display: flex;
   align-items: center;
   gap: 4px;
 }
+.profile-follow-item span{
+  font-size: clamp(16px,3vh,28px);
+}
+
 .profile-follow-count {
-  font-weight: 700;
+  font-weight: 600;
 }
 .profile-follow-label {
   color: #4b5563;
@@ -138,6 +141,7 @@
   cursor: pointer;
   font-size: 16px;
 }
+
 
 .profile-tweets {
   padding-top: 16px;
@@ -163,6 +167,11 @@
   width: 50px;
   height: 50px;
 }
+
+.tweet-avatar > img{
+  height: 100%;
+}
+
 .tweet-header-info {
   display: flex;
   align-items: center;
@@ -174,7 +183,7 @@
 }
 .tweet-username {
   color: #6b7280;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 .tweet-text {
   margin-top: 10px;
@@ -188,13 +197,17 @@
 }
 .tweet-actions {
   display: flex;
-  gap: 24px;
+  gap: clamp(18px,2vw,24px);
 }
 .tweet-action-btn {
   height: 30px;
   width: 30px;
   padding: 5px;
   cursor: pointer;
+}
+
+.tweet-action-btn > img {
+  height: 100%;
 }
 .tweet-action-btn:hover {
   border-radius: 100%;
@@ -204,3 +217,41 @@
   color: #6b7280;
   font-size: 14px;
 }
+
+
+@media (min-width: 1024px){
+  .profile-container{
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .profile-content{
+      width: 80%;
+     margin-top: 12px;
+     border-radius: 16px;
+  }
+
+
+  .profile-header > button > img {
+    max-height: 20px;
+ }
+
+
+ .profile-banner{
+  height: 180px;
+  border-radius: 16px 16px 0 0;
+ }
+}
+
+
+@media (min-width:768px){
+  .profile-edit-btn {
+  position: absolute;
+  top: 20px;
+  right: 12px
+}
+}
+ 
+
+
