@@ -1,0 +1,358 @@
+.home-container {
+  max-width: 100vw;
+  min-height: 100vh;
+  background-color: #e6ecf0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 10px;
+  height: 50px;
+}
+
+header .header-left {
+  display: flex;
+  align-items: center;
+}
+
+header .header-left > img {
+  width: 30px;
+  margin-left: 30px;
+}
+
+header > img {
+  width: 30px;
+  height: 30px;
+}
+
+header > a {
+  color: #555;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 30px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 32px;
+}
+
+.sidebar {
+  width: 300px;
+}
+
+.user-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0 0 20px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.card-banner {
+  background: #00acee;
+  height: 80px;
+  border-radius: 12px 12px 0;
+}
+
+.user-card .card-avatar {
+  margin-top: -40px;
+  margin-bottom: 8px;
+}
+
+.user-card .card-avatar > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background: #fff;
+}
+
+.user-card .card-info {
+  margin-bottom: 8px;
+}
+
+.user-card .card-name {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.user-card .card-username {
+  color: #888;
+  font-size: 15px;
+}
+
+.user-card .card-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px;
+}
+
+.user-card .stat-item {
+  text-align: center;
+}
+
+.user-card .stat-item .label {
+  display: block;
+  color: #888;
+  font-size: 14px;
+}
+
+.user-card .stat-item .value {
+  font-weight: bold;
+  color: #1da1f2;
+  font-size: 16px;
+}
+
+.feed {
+  flex: 1 1 600px;
+  max-width: 600px;
+}
+
+.tweet-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tweet-box > input {
+  flex: 1;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  color: #222;
+}
+
+.tweet-box > button {
+  background: #00acee;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tweet-box > button:hover {
+  background: #0091ca;
+}
+
+.home-tweets {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tweet-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 18px 20px 12px 20px;
+}
+
+.tweet-card .tweet-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-card .tweet-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.tweet-card .tweet-avatar > img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #eee;
+}
+
+.tweet-card .tweet-info {
+  margin-left: 10px;
+}
+
+.tweet-card .tweet-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.tweet-card .tweet-username {
+  color: #888;
+  font-size: 15px;
+}
+
+.tweet-card p {
+  font-size: 16px;
+  margin: 8px 0 10px 0;
+  color: #222;
+}
+
+.tweet-card .tweet-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tweet-card .tweet-footer .actions {
+  display: flex;
+  gap: 18px;
+}
+
+.tweet-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.tweet-action-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+.tweet-card .tweet-footer .date {
+  color: #888;
+  font-size: 14px;
+}
+
+.widgets {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.who-to-follow {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.who-to-follow .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+.who-to-follow .title > a {
+  color: #00acee;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.sugested-user {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+  gap: 10px;
+  position: relative;
+}
+
+.sugested-user > img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #eee;
+}
+
+.sugested-user .info {
+  flex: 1;
+}
+
+.sugested-user .info .name {
+  font-weight: bold;
+  font-size: 15px;
+  display: block;
+}
+
+.sugested-user .username {
+  color: #888;
+  font-size: 14px;
+}
+
+.sugested-user > button {
+  background: #1da1f2;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sugested-user > button.following {
+  background: #fff;
+  color: #00acee;
+  border: 1px solid #00acee;
+}
+
+.sugested-user .close {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+}
+
+footer {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  color: #888;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0 15px;
+  }
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 0 15px;
+    width: 100%;
+  }
+
+  .sidebar,
+  .feed,
+  .widgets {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .tweet-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .tweet-box > button {
+    width: 100%;
+  }
+
+  .tweet-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
