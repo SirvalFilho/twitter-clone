@@ -134,7 +134,7 @@ main {
   color: #222;
 }
 
-.tweet-box > button {
+.tweet-box > input[type="submit"] {
   background: #00acee;
   color: #fff;
   border: none;
