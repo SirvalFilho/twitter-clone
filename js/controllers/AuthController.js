@@ -1,6 +1,7 @@
 import { SignUpView} from "../views/SignUpView.js";
 import { LogInView} from "../views/LogInView.js";
 import { AuthRepository } from "../repositories/AuthRepository.js";
+import { HomeController } from "./HomeController.js";
 export class AuthController{
     static isAuthenticated(){
         return !!localStorage.getItem('token') ;
@@ -16,6 +17,11 @@ export class AuthController{
       const view = new LogInView(()=> this.loadSignUpView());
       document.getElementById('app').innerHTML = view.render();
       view.afterRender();
+    }
+
+    redirectToHome(){
+        const homeController = new HomeController();
+        homeController.loadHomeView();
     }
 
      async attachEventToSignUpForm(event){
@@ -57,6 +63,7 @@ export class AuthController{
         try{
             const data = await authRepository.register(user);
             this.persistUserData(data);
+            this.redirectToHome();
         }catch(error){
             alert(error.message);
         }   
@@ -93,6 +100,7 @@ export class AuthController{
         try{
             const data = await authRepository.login(user);
             this.persistUserData(data);
+            this.redirectToHome();
         }catch(error){
             alert(error.message);
         }   

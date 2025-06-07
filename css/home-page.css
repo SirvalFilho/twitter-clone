@@ -126,7 +126,7 @@ main {
 }
 
 .tweet-box > input {
-  flex: 1;
+  flex: 5;
   border: none;
   font-size: 16px;
   outline: none;
@@ -135,6 +135,7 @@ main {
 }
 
 .tweet-box > input[type="submit"] {
+  flex: 1;
   background: #00acee;
   color: #fff;
   border: none;
@@ -145,7 +146,7 @@ main {
   cursor: pointer;
 }
 
-.tweet-box > button:hover {
+.tweet-box > input[type="submit"]:hover {
   background: #0091ca;
 }
 
@@ -346,7 +347,12 @@ footer {
     padding: 15px;
   }
 
-  .tweet-box > button {
+  .tweet-box > input{
+    min-height: 50px;
+  }
+
+  .tweet-box > input[type="submit"] {
+    flex:1;
     width: 100%;
   }
 

@@ -1,4 +1,9 @@
 export class HomePageView {
+
+    constructor(onHomeClick){
+        this.onHomeClick = onHomeClick;
+    }
+
   render() {
     return `
     <div class="home-container">

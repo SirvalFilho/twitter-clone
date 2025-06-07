@@ -1,15 +1,23 @@
 import { AuthController } from "./AuthController.js";
+import { HomeController } from "./HomeController.js";
 export class MainController{
 
-
-    init(){
-        if(!AuthController.isAuthenticated()){
-                this.redirectToSignUpView();
+    constructor(){
+         if(this.checkIfUserIsLogIn()){
+            this.redirectToHomePageView();
+         }
     }
-}
+
+
+    redirectToHomePageView(){
+        const homeController = new HomeController();
+        homeController.loadHomeView();
+    }
+
     redirectToSignUpView(){
         const authController = new AuthController();
         authController.loadSignUpView();
+        
     }
 
     redirectToLogInView(){
@@ -17,5 +25,12 @@ export class MainController{
         authController.loadLogInView();
     }
 
- 
+    checkIfUserIsLogIn(){
+        if(!AuthController.isAuthenticated()){
+                this.redirectToSignUpView();
+                return false;
+    }
+    return true;
+
+    }
 }
