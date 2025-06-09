@@ -7,6 +7,12 @@ export class AuthController{
         return !!localStorage.getItem('token') ;
     }
 
+    static logOut(){
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+        localStorage.removeItem('email');
+    }
+
     loadSignUpView(){
     const view = new SignUpView(()=> this.loadLogInView());
     document.getElementById('app').innerHTML = view.render();

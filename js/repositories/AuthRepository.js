@@ -16,10 +16,8 @@ export class AuthRepository {
             }
 
             const data = await response.json();
-            alert(data.message);
             return data;
     }catch(error){
-        throw error;
     }
        
     }
@@ -40,12 +38,9 @@ export class AuthRepository {
             }
 
             const data = await response.json();
-            alert(data.message);
-            
             return data;
 
         }catch(error){
-            throw error;
         }      
     }
      
