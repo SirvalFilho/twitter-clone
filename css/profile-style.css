@@ -1,9 +1,9 @@
 .profile-container {
   max-width: 100vw;
   height: 100vh;
+  overflow-y: auto;
   background-color: #e8ecf0;
 }
-
 
 .profile-content{
   width: 100%;
@@ -144,7 +144,6 @@
 
 
 .profile-tweets {
-  padding-top: 16px;
   padding-bottom: 16px;
 }
 .tweet-card {
@@ -213,12 +212,35 @@
   border-radius: 100%;
   background-color: #00abee23;
 }
+#delete-tweet:hover{
+  background-color: #ff000023;
+}
 .tweet-date {
   color: #6b7280;
   font-size: 14px;
 }
-
-
+.update-profile-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+.update-profile-back-button{
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  cursor: pointer;
+}
+.update-profile-back-button > img{
+  height: 24px;
+}
+.update-profile-form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 @media (min-width: 1024px){
   .profile-container{
     display: flex;

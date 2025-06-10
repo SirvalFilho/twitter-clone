@@ -30,6 +30,11 @@ export class AuthController{
         homeController.loadHomeView();
     }
 
+    redirectToProfile(){
+        const homeController = new HomeController();
+        homeController.loadUserProfile();
+    }
+
      async attachEventToSignUpForm(event){
         event.preventDefault();
         const form = event.target;
@@ -110,6 +115,34 @@ export class AuthController{
         }catch(error){
             alert(error.message);
         }   
+     }
+
+      async attachEventToUpdateProfileForm(event){
+        event.preventDefault();
+        const form = event.target;
+
+        let username = form['username'].value;
+        let email = form['email'].value;
+
+        if(!this.isValidEmail(email)){
+            alert('Entre com um email válido.');
+            return;
+        }
+
+        const user = {
+            "username" : username,
+            "email" : email
+        };
+
+        const authRepository = new AuthRepository();
+       
+        try{
+            let response = await authRepository.updateProfile(user);
+            this.redirectToProfile();
+        }catch(error){
+            alert(error.message);
+        }
+
      }
 
     isValidEmail(email) {

@@ -1,3 +1,6 @@
+import { HomeController } from "../controllers/HomeController.js";
+
+
 export class ProfileView{
 
     constructor(){
@@ -7,7 +10,7 @@ export class ProfileView{
         <div class="profile-container">
         <div class="profile-content">
         <div class="profile-header">
-            <button>
+            <button id="back-button">
                 <img src="./assets/profile-assets/back-profile.svg" alt="" />
             </button>
         </div>
@@ -34,7 +37,7 @@ export class ProfileView{
                 </div>
             </div>
             <div class="profile-edit-btn">
-                <button>Edit Profile</button>
+                <button id="edit-profile">Edit Profile</button>
             </div>
             </div>
             <div class="twitte-container">
@@ -50,5 +53,14 @@ export class ProfileView{
 </div>
         
 `;
+}
+
+afterRender(){
+const backButton = document.getElementById("back-button");
+backButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const homeController = new HomeController();
+    homeController.loadHomeView(); 
+  });
 }
 }

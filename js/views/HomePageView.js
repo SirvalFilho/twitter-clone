@@ -8,7 +8,7 @@ export class HomePageView {
     return `
     <div class="home-container">
             <header>
-                <div class="header-left">
+                <div class="header-left" id="home">
                 <img src="./assets/images/home-icon.svg" alt="Home" />
                 </div>
                 <img src="./assets/images/home-logo.svg" alt="Logo" />

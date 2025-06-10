@@ -1,6 +1,8 @@
 import {HomePageView} from '../views/HomePageView.js'
+import { ProfileView } from '../views/ProfileView.js';
 import { AuthController } from './AuthController.js';
 import { TweetController } from './TweetController.js';
+import { UpdateProfileView } from '../views/UpdateProfileView.js';
 
 export class HomeController{
 
@@ -14,12 +16,21 @@ export class HomeController{
         .addEventListener('click', ()=> AuthController.logOut());
 
        document.getElementById('tweet-form')
-       .addEventListener('submit', (e) =>{
+       .addEventListener('submit',async (e) =>{
         e.preventDefault(),
-        this.attachValidationToNewPostForm(e)});
+        await this.attachValidationToNewPostForm(e),
+        e.target.tweet.value = ''
+        });
+
+
+        document.getElementById('home')
+        .addEventListener('click', () => {
+            this.loadUserProfile();
+        });
     }
 
      async attachValidationToNewPostForm(event){
+        event.preventDefault();
         const input = event.target.tweet.value;
 
         if(!input) return;
@@ -36,5 +47,35 @@ export class HomeController{
             await tweetController.loadAllTweets();
             return;
         }
+    }
+
+    loadUserProfile(){
+        const view = new ProfileView();
+        const tweets = new TweetController();
+
+        document.getElementById('app').innerHTML = view.render();
+        tweets.loadUserTweets();
+        view.afterRender();
+
+        document.getElementById('edit-profile')
+        .addEventListener('click', () => {
+            this.loadUpdateProfileView();
+        });
+    }
+
+    loadUpdateProfileView(){
+        const updateView = new UpdateProfileView();
+
+        document.getElementById('app').innerHTML = updateView.render();
+        document.querySelector('.update-profile-back-button')
+        .addEventListener('click', () => {
+            this.loadUserProfile();
+        })
+        document.getElementById('update-profile-form')
+        .addEventListener('submit', (e) => {
+            e.preventDefault();
+            const controller = new AuthController();
+            controller.attachEventToUpdateProfileForm(e);
+        })
     }
 }

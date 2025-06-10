@@ -43,5 +43,35 @@ export class AuthRepository {
         }catch(error){
         }      
     }
+
+    async updateProfile(user){
+        try{
+            const response = await fetch('https://mini-twitter-api-vy9q.onrender.com/api/users/profile', {
+                method: 'PUT', 
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify(user)
+            }); 
+
+            if(response.status === 400){
+                throw new Error('O email ou nome de usuário informado já está sendo utilizado por outro usuário.');
+            }
+
+            if(!response.ok){
+                const error = await response.json();
+                throw new Error(error.message || 'Ocorreu um erro ao atualizar o perfil.'); 
+            }
+
+            const data = await response.json();
+            localStorage.setItem('username', data.user.username);
+            localStorage.setItem('email', data.user.email);
+            alert('Perfil atualizado com sucesso!');
+            return data;
+        }catch(error){ 
+            throw error;
+        }
+    }
      
 }

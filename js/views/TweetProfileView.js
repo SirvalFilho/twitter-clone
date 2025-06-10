@@ -1,5 +1,5 @@
-export class TweetView{
-
+export class TweetProfileView{
+   
     constructor(tweet){
         this.tweet = tweet;
     }
@@ -19,6 +19,7 @@ export class TweetView{
             <p class="tweet-text"> ${this.tweet.content}</p>
             <div class="tweet-footer">
                 <div class="tweet-actions">
+        
                     <button class="tweet-action-btn">
                          <img src="./assets/profile-assets/curtir.png" alt="" />
                     </button>
@@ -30,6 +31,9 @@ export class TweetView{
                     </button>
                     <button class="tweet-action-btn">
                          <img src="./assets/profile-assets/compartilhar.png" alt="" />
+                    </button>
+                   <button class="tweet-action-btn delete-tweet"  data-id="${this.tweet._id}">
+                         <img src="./assets/profile-assets/lixeira.png" alt="" />
                     </button>
                 </div>
                 <span class="tweet-date">${this.formattDate(this.tweet.createdAt)}</span>
@@ -50,5 +54,4 @@ export class TweetView{
 
         return `${day}/${month}/${year} - ${hours}:${minutes}`;
     }
-    
 }
